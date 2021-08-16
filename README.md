@@ -1,4 +1,4 @@
-# Canal Dstak Desafio React JS (Web)
+# Canal Dstak Desafio NodeJS (Backend)
 
 ## Instruções
 
@@ -6,8 +6,8 @@ Você possui *uma semana* para fazer o teste. Nesse teste todas as suas habilida
 
 - Poder de simplificação
 - Autonomia e soluções criativas
-- Conhecimento em UI / UX
-- Conhecimento técnico em desenvolvimento Web usando React JS
+- Conhecimento NodeJS e Clean Architecture
+- Conhecimento técnico componentização
 - Conhecimento em git
 - Capacidade em explicar as decisões tomadas e como testar o projeto
 
@@ -15,9 +15,9 @@ Você possui *uma semana* para fazer o teste. Nesse teste todas as suas habilida
 
 Você deve:
 
-- Criar um ambiente de desenvolvimento em React JS
 - Fazer o fork particular e privado do projeto do desafio e compartilhar com:
   - @cloped
+  - @romfmoura
 - Codificar
 - Commitar seu código
 
@@ -37,41 +37,37 @@ Após você implementar o seu desafio revisite as suas sugestões e veja se há 
 
 Você está em uma startup que acabou de pivotar para criar um marketplace de venda de roupas, será necessário um backoffice para suportar a operação e o atendimento aos compradores e vendedores. Você precisará fazer o mais simples com a melhor qualidade possível!
 
-Inicialmente a aplicação precisará de 2 telas simples. Uma que exiba uma lista de pedidos que estão pendentes de determinada ação. Uma outra que traga mais detalhes de um pedido escolhido.
-
-Toda chamada ao backend deverá ser "mockada".
+Sua tarefa é bem simples. Precisa criar um microserviço que faça a validação de um CEP, e retorne seus daddos (endereço) em uma estrutura normalizada. Para essa implementação, você poderá utilizar o express ou a plataforma serverless da AWS (Api gateway + lambda). A infra é de sua escolha, apenas justifique no README e documente os passos para execução de seu microserviço.
 
 ### Requisitos
 
 * Básicos
-  * A aplicação deverá ser em React JS
+  * A aplicação deverá ser em NodeJS com Typescript
   * Simplificar o que deve ser feito mantendo qualidade
-  * Uso de biblioteca de componentes estilizados (priorize o Bootstrap)
-  * A UI deve ser coesa em seus estilos como tamanho de fontes e espaçamentos
-  * Padrão de commits com Conventional Commits
-  * Commits atômicos
-  * Documentação do que você fez e das suas motivações no README
-* Na listagem de pedidos será necessário:
-  * uma lista com as seguintes colunas: data, codigo do pedido, nome do comprador, cidade/estado de entrega, valor, forma de pagamento e status.
-  * ordernar por data, de forma crescente
-  * colorir o fundo de cada linha de acordo com o status do pedido (aguardando pagamento, pago, preparando, enviado, entregue)
-  * a lista de pedido precisa ser paginada
-* Na tela de pedido
-  * Exibir os detalhes do pedido. Além dos campos informado na lista, adicionar: itens (lista de: sku, qtd, descrição), anexos (exibir lista de documentos anexados)
-  * Um botão para fechar a tela (não precisa permitir edição)
+  * Estruture o teste unitátio com o Jest
+  * A interface do microserviço deverá ser RESTFULL. Defina a conversação como quiser e documente no README (request e response)
+  * Não há necessidade de autenticação para essa rota
+  * Utilize conceitos de clean architecture (entrypoint, usecase, connector, entity, etc..)
+  * Para consulta do CEP, utilize o VIACEP (https://viacep.com.br/ws/01001000/json/)
+  * Regra de negócio: Verifique se o input recebido está no formato correto de um CEP. Se tiver, faça a consulta dos dados no VIACEP e formate a resposta. Trate todos os erros possíveis.
+  * Utilize commits atômicos
+  * Documente do que você fez e das suas motivações no README. Isso servirá como guia para a entrevista técnica.
 
 * Você se destacará ainda mais se fizer algum desses pontos:
-  * Uso de componentes Bootstrap
   * Configuração/uso de lint
-  * Aplicar conhecimentos de UI/UX
   * Componentização
   * Utilizar os padrões Clean Code
   * Criação de testes unitário
-  * Tratativas de Erro com feedback para o usuário
+  * Tratativas de Erro
+  * Padrões RESTFULL
 
 ### Avaliação
 
-* **50%**: Básico
-* **30%**: Tela de listagem
-* **20%**: Tela de detalhe
+* **50%**: Arquitetura de desenvolvimento
+* **30%**: Testes unitários e tratamento de erro
+* **20%**: Documentação do README
+
+### Entrevista técnica
+
+Esse desafio será o assunto principal da entrevista técnica. Nessa conversa discutiremos o código, a arquitetura implementada fazendo um paralelo à nossa realidade. Faremos também um bate papo sobre suas decisões tomadas para essa implementação.
 
