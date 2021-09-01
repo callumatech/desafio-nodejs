@@ -16,7 +16,6 @@ Você possui *uma semana* para fazer o teste. Nesse teste todas as suas habilida
 Você deve:
 
 - Fazer o fork particular e privado do projeto do desafio e compartilhar com:
-  - @cloped
   - @romfmoura
 - Codificar
 - Commitar seu código
